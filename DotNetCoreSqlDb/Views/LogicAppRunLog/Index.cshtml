@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DotNetCoreSqlDb.Models.LogicAppRunLog>
+
+@{
+    ViewData["Title"] = "Logic App Run Log";
+}
+
+<h1>LogicAppRunLogController</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExecutionDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TodoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutionDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TodoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info)
+            </td>            
+        </tr>
+}
+    </tbody>
+</table>

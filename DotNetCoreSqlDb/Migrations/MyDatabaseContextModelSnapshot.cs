@@ -40,6 +40,28 @@ namespace DotNetCoreSqlDb.Migrations
 
                     b.ToTable("Todo");
                 });
+
+            modelBuilder.Entity("DotNetCoreSqlDb.Models.LogicAppRunLog", b =>
+            {
+                b.Property<int>("LogicAppRunID")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
+
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                b.Property<DateTime>("ExecutionDateTime")
+                    .HasColumnType("datetime");
+
+                b.Property<string>("TodoID")
+                    .HasColumnType("int");
+
+                b.Property<string>("Info")
+                    .HasColumnType("nvarchar(max)");
+
+                b.HasKey("LogicAppRunID");
+
+                b.ToTable("LogicAppRunLog");
+            });
 #pragma warning restore 612, 618
         }
     }
